@@ -16,6 +16,16 @@ app.get("/", (req, res) => {
   console.log("response sent");
   res.send("This is App.Get Request Root Path");
 });
+app.get("/search", (req, res) => {
+  console.log("response sent");
+  let { q } = req.query;
+  if (!q) {
+    res.send("No search results found");
+  } else {
+    console.log(req.query);
+    res.send(`Your Search results ${q}`);
+  }
+});
 app.get("/orange", (req, res) => {
   console.log("response sent");
   res.send("This is App.Get Request Orange Path");
