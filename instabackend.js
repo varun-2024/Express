@@ -10,8 +10,12 @@ app.set("views", path.join(__dirname, "/views"));
 app.listen(port, (req, res) => {
   console.log(`Listening on ${port}`);
 });
+
 app.get("/", (req, res) => {
+  res.send("Welcome");
+});
+app.get("/ig/:username", (req, res) => {
   const instaData = require("./data.json");
   console.log(instaData);
-  res.render("instagram.ejs");
+  res.render("instagram.ejs", { data: instaData });
 });
