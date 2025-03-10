@@ -13,3 +13,11 @@ app.listen(port, () => {
 app.get("/", (req, res) => {
   res.render("home.ejs");
 });
+app.get("/ig/:username", (req, res) => {
+  let { username } = req.params;
+  res.render("home.ejs", { username });
+});
+app.get("/rolldice", (req, res) => {
+  let diceValue = Math.floor(Math.random() * 6) + 1;
+  res.render("rolldice.ejs", { diceValue });
+});
