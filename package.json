@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/varun-2024/Express#readme",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "file:"
   }
 }
